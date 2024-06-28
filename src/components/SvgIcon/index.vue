@@ -5,8 +5,8 @@
     </svg>
   </div>
 </template>
-  
-  <script setup lang="ts">
+
+<script setup lang="ts">
 defineProps({
   //xlink:href属性值的前缀
   prefix: {
@@ -32,4 +32,4 @@ defineProps({
   },
 })
 </script>
-  <style scoped></style>
+<style scoped></style>
