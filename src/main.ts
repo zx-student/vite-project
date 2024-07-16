@@ -16,6 +16,22 @@ import globalComponent from '@/components/index'
 
 // 引入全局样式
 import '@/styles/index.scss'
+// 引入路由
+import router from './router'
+// 引入仓库
+import pinia from './store'
+
+// // 测试代码，测试mock接口
+// import axios from 'axios'
+// // 登录接口
+// axios({
+//   url: '/api/user/login',
+//   method: 'post',
+//   data: {
+//     username: 'admin',
+//     password: '12122',
+//   },
+// })
 
 // 获取应用的实例对象
 const app = createApp(App)
@@ -24,6 +40,10 @@ const app = createApp(App)
 app.use(ElementPlus, {
   locale: zhCn,
 })
+// 安装仓库
+app.use(pinia)
+// 注册模板路由
+app.use(router)
 // 安装自定义插件
 app.use(globalComponent)
 // 将应用挂载到挂载点上
