@@ -34,6 +34,7 @@ export default defineConfig(({ command, mode }) => {
         scss: {
           javascriptEnabled: true,
           additionalData: '@import "./src/styles/variable.scss";',
+          // api: 'modern-compiler',
         },
       },
     },

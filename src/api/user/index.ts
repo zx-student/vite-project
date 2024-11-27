@@ -12,7 +12,7 @@ enum API {
   LOGOUT_URL = '/admin/acl/index/logout',
 }
 
-//登录接口
+//登录接口   第一个data, 是 reqLogin 函数的参数，类型为 loginFormData。  第二个data是实际作为请求体发送的数据，它对应于 loginFormData 类型的数据。
 export const reqLogin = (data: loginFormData) =>
   // 泛型参数<T,U>,
   // 第一个参数any表示这个 POST请求的 服务器 返回类型 可以是任何类型,占位.

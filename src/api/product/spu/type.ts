@@ -5,7 +5,7 @@ export interface ResponseData {
   ok: boolean
 }
 
-//SPU数据的ts类型:需要修改
+//SPU数据的ts类型:需要修改       SpuData对象
 export interface SpuData {
   category3Id: string | number
   id?: number
@@ -15,11 +15,12 @@ export interface SpuData {
   spuImageList: null | SpuImg[]
   spuSaleAttrList: null | SaleAttr[]
 }
-//数组:元素都是已有SPU数据类型
+//数组:元素都是已有SPU数据类型     Records是多个SpuData对象组成的数组类型
 export type Records = SpuData[]
 //定义获取已有的SPU接口返回的数据ts类型
 export interface HasSpuResponseData extends ResponseData {
   data: {
+    // 数组，每个对象就是SpuData接口的内容
     records: Records
     total: number
     size: number

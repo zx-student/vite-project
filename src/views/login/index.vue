@@ -69,7 +69,7 @@ let loginForm = reactive({ username: 'admin', password: 'atguigu123' })
 // // 或者const login = () => {
 // useStore.userLogin(loginForm).then((res) => {  ...   })  //res就是userLogin方法的return值.
 const login = async () => {
-  //保证全部表单相校验通过再发请求
+  //保证全部表单相校验通过再发请求-校验
   await loginForms.value.validate()
   //加载效果:开始加载
   loading.value = true
@@ -78,7 +78,7 @@ const login = async () => {
   //请求成功->首页展示数据的地方
   //请求失败->弹出登录失败信息
   try {
-    //保证登录成功
+    //保证登录成功   ，loginForm收集的表单参数
     await useStore.userLogin(loginForm)
     //编程式导航跳转到展示数据首页
     //判断登录的时候,路由路径当中是否有query参数，如果有就往query参数挑战，没有跳转到首页
@@ -123,7 +123,7 @@ const validatorPassword = (rule: any, value: any, callback: any) => {
   }
 }
 
-//定义表单校验需要配置对象
+//定义表单校验需要配置对象  const rules = (reactive{  username:[] ,  password:[]})
 const rules = {
   //规则对象属性:
   //required,代表这个字段务必要校验的
